@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>BS Generator</title>
+    <meta name="description" content="Just a playground" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="my-5 mx-lg-5">
+        <strong>Talk to an AI that will complete your sentence with bullshit</strong>
+      </h2>
+      <div class="px-lg-5 pt-0">
+        <form class="md" style="color: #757575;">
+          <textarea
+            name="text"
+            class="form-control md-textarea"
+            rows="10"
+            id="textarea"
+            placeholder="Type in a prompt here..."
+          ></textarea>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">
+              Generate Text
+            </button>
+          </div>
+        </form>
+        <Copyright>G.S.</Copyright>
+      </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"
+    ></script>
+    <script>
+      $("form").on("submit", function(e) {
+        e.preventDefault();
+        $.post(window.location.href, $(this).serialize(), function(data) {
+          console.log("Result Found!");
+          $("textarea").val(data);
+        });
+      });
+    </script>
+  </body>
+</html>
